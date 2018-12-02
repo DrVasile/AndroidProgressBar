@@ -1,8 +1,10 @@
 package com.example.vasile.progressbar;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Button;
 
@@ -18,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView mImageView = (ImageView) findViewById(R.id.imageview_animation_list);
+        ((AnimationDrawable) mImageView.getBackground()).start();
+
         // initiate progress bar and start button
         progressBar = (ProgressBar) findViewById(R.id.myProgressBar);
         startButton = (Button) findViewById(R.id.startButton);
